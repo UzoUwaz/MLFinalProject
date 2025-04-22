@@ -1,2 +1,2 @@
 # MLFinalProject
-Characterizing Features for Heart Disease in Various Demographics of Patients 
+Predicting AirBnb Prices and characterizing best features for pricing models 

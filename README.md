@@ -36,8 +36,8 @@ MLFinalProject-main/
 
 ### 1. Clone & install  
 ```bash
-git clone https://github.com/your-username/MLFinalProject-main.git
-cd MLFinalProject-main
+git clone https://github.com/your-username/MLFinalProject.git
+cd MLFinalProject
 python3 -m venv venv            # (optional but recommended)
 source venv/bin/activate        # Mac/Linux
 venv\Scripts\activate           # Windows

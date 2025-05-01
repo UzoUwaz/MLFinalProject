@@ -28,6 +28,8 @@ MLFinalProject-main/
 ├── Copy of IDS705 Final Report Template.docx
 │
 └── README.md                              # ← You are here
+└── requirements.txt                             
+
 ```
 
 ---
@@ -61,7 +63,7 @@ pip install -r requirements.txt
    ```
 3. Change directory to where you cloned this repo in your Drive:
    ```python
-   %cd /content/drive/MyDrive/path/to/MLFinalProject-main
+   %cd /content/drive/MyDrive/path/to/MLFinalProject
    ```
 4. Run each cell, starting with `main_copy.ipynb`.
 

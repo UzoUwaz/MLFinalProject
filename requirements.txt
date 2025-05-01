@@ -1,0 +1,16 @@
+#Data Manipulation and Visualization
+numpy
+pandas
+matplotlib
+seaborn
+#MachineLearning Tasks
+scikit-learn
+xgboost
+lightgbm
+catboost
+tensorflow
+ydata-profiling
+#General Programming
+jupyter
+ipython
+google-colab

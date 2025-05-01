@@ -50,7 +50,6 @@ pip install -r requirements.txt
 ### 2. Data setup  
 - **Cleaned data** is already in `/data/`.  
 - **Raw Airbnb data** (if you need to re-run cleaning) must be downloaded from [https://www.kaggle.com/datasets/mohithsairamreddy/salary-data] and placed in `/data/raw/`.  
-- To **(re)generate** the cleaned CSVs, you’ll need a separate cleaning script or notebook—*see Missing Items* below.
 
 ### 3. Running the notebooks  
 

@@ -1,9 +1,12 @@
 # MLFinalProject
 
-## Team Peacock 
-## 🏡 Predicting AirBnb Prices and characterizing best features for pricing models 
+## Team Peacock
 
-This repository explores and predicts Airbnb listing prices across multiple U.S. cities by combining exploratory data analysis (EDA), feature engineering, and ensemble machine learning. You’ll find Jupyter notebooks for Asheville, Boston, and Chicago, plus a consolidated pipeline in `main_copy.ipynb`.
+### 🏡 Intro and Overview
+
+This repository applies exploratory data analysis, feature engineering, and ensemble learning to predict Airbnb listing prices in Asheville, Boston, Chicago, and New York City. You’ll find city‑specific notebooks (`Asheville_main.ipynb`, `Boston_main.ipynb`, `Chicago_main.ipynb`, `NYC_main.ipynb`).
+
+> **Note:** The notebooks are designed to run in Google Colab. You’ll need a Google account with access to Colab Notebooks and Google Drive to mount your drive and execute the analyses.
 
 ---
 
@@ -16,13 +19,12 @@ MLFinalProject-main/
 │   ├── Asheville_listings_cleaned.csv
 │   ├── Boston_listings_cleaned.csv
 │   ├── chicago_listings_cleaned.csv
-│   ├── split_1.csv through split_4.csv    # Intermediate train/val splits
-│   └── test.csv                           # Hold-out test set
+│   └── nyc_listings_cleaned.csv 
 │
-├── Ashville_main_copy.ipynb               # EDA & modeling for Asheville
-├── Boston_of_main_copy.ipynb              # EDA & modeling for Boston
-├── Copy_of_Chicaog_main_copy.ipynb        # EDA & modeling for Chicago
-├── main_copy.ipynb                        # Unified pipeline & feature engineering
+├── Ashville_main.ipynb                    # EDA & modeling for Asheville
+├── Boston_main.ipynb                      # EDA & modeling for Boston
+├── Chicago_main.ipynb                     # EDA & modeling for Chicago
+├── NYC_main.ipynb                         # EDA & modeling for NYC
 │
 ├── project_report_ref.pdf                 # Final report reference
 ├── Copy of IDS705 Final Report Template.docx
@@ -36,7 +38,7 @@ MLFinalProject-main/
 
 ## 🚀 Getting Started
 
-### 1. Clone & install  
+### 1. Clone & install requirements
 ```bash
 git clone https://github.com/your-username/MLFinalProject.git
 cd MLFinalProject
@@ -48,32 +50,33 @@ pip install -r requirements.txt
 ```
 
 ### 2. Data setup  
-- **Cleaned data** is already in `/data/`.  
-- **Raw Airbnb data** (if you need to re-run cleaning) must be downloaded from [https://www.kaggle.com/datasets/mohithsairamreddy/salary-data] and placed in `/data/raw/`.  
+- **Cleaned data** is already in `/data/`. We've included Asheville, Boston, Chicago, and NYC  
+- **Raw Airbnb data** If you need to re-run cleaning or want to add new cities, they must be downloaded from 
+  the website, Inside Airbnb. This can be done easily by modifying the first few lines of `data/data_processing.py` to include the needed cities, and running the script via the terminal. The script will automatically download and pre-clean the data.
+
+  ```bash
+  python data/data_processing.py
+  ```
 
 ### 3. Running the notebooks  
 
-#### On Google Colab (recommended)
+> **Note** All the development has been done on Google Colab for this repository --- although it *should* work locally too, we will only provide our workflow on Colab, as that is the only environment we have tested it on. 
+
+#### On Google Colab 
 1. Open the notebook in Colab.  
-2. Mount your Google Drive when prompted:
+2. Upload the entire repository into the Colab Notebooks folder
+3. Mount your Google Drive when prompted:
    ```python
    from google.colab import drive
    drive.mount('/content/drive')
    ```
-3. Change directory to where you cloned this repo in your Drive:
+4. Change directory in the first cell to where you cloned this repo in your Drive:
    ```python
-   %cd /content/drive/MyDrive/path/to/MLFinalProject
+   import os
+   os.chdir(r'/content/drive/My Drive/Colab Notebooks/ids705/project')
    ```
-4. Run each cell, starting with `main_copy.ipynb`.
+5. Run the notebook as needed for NYC, Boston, Ashville, or Chicago to engineer features, do final cleaning on data, EDA, and model.
 
-#### Locally  
-1. In each notebook, **comment out** or **remove** the `drive.mount()` and `os.chdir()` lines.  
-2. Make sure your working directory is the root of this project (where `data/` lives).  
-3. Launch Jupyter:
-   ```bash
-   jupyter notebook
-   ```
-4. Open `main_copy.ipynb` and run cells top to bottom.
 
 ---
 
@@ -94,6 +97,6 @@ pip install -r requirements.txt
   - StackingRegressor to combine strengths.
 
 - **Evaluation**  
-  - Standard metrics (MAE, RMSE).  
-  - Train/validation/test splits under `/data/split_*.csv`.
+  - Standard metrics (MAE, RMSE, F1, etc.).
+  - Evaluation is run on the final best model (XGBoost)
 
